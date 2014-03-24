@@ -1,3 +1,23 @@
+(define (last-pair items)
+  (if (null? (cdr items))
+      (car items)
+      (last-pair (cdr items))))
+
+
+(define (last-pair items)
+  (define (iter items c)
+    (if (null? items)
+	c
+	(iter (cdr items) (car items))))
+  (iter items '()))
+
+(last-pair x)
+
+  
+
+
+
+
 (define (list-ref items n)
   (if (= n 0)
       (car items)
@@ -25,6 +45,9 @@
 (append squares odd)
 
 
+
+
+
 ;; recursive
 
 (define (last-pair items)
@@ -42,5 +65,5 @@
 
 (last-pair-iter odd)
 
-(last-pair (list 23 72 149 34))
+
 	

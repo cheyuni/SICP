@@ -1,29 +1,3 @@
-(define (list-ref items n)
-  (if (= n 0)
-      (car items)
-      (list-ref (cdr items) (- n 1))))
-
-(define squares (list 1 4 9 16 25))
-
-(list-ref squares 3)
-
-(define (length items)
-  (if (null? items)
-      0
-      (+ 1 (length (cdr items)))))
-
-(define (length-iter items)
-  (define (iter list result)
-    (if (null? list)
-	result
-	(iter (cdr list) (+ result 1))))
-  (iter items 0))
-
-(define odd (list 1 3 5 7 9))
-
-(append odd squares)
-(append squares odd)
-
 
 ;; recursive
 
@@ -66,3 +40,14 @@
       (append (reverse-recursive (cdr items)) (list (car items)))))
       
 (reverse-recursive odd)
+
+
+(define (reverse items)
+  (define (iter list result)
+    (if (null? list)
+	result
+	(iter (cdr list) (cons (car list) result))))
+  (iter items '()))
+
+(reverse x)
+

@@ -6,6 +6,7 @@
 
 (cdr (cdr (list 1 2)))
 
+
 (cons x y)
 
 (list x y)
@@ -44,6 +45,8 @@
 (define result (reverse (list x y)))
 (define result (list x y))
 (define result (list (list 1 2 (list 3 4)) (list 5 6 7)))
+
+
 (define result (reverse (list (list 1 2 3) (list 4 5 6))))
 (define result (list (list 4 5 6) 1))
 (car (cdr result))
@@ -57,10 +60,6 @@
 	((not (pair? (car result)))
 	 (append (list (car result)) (deep-reverse (cdr result))))))
 
-(cons x y)
-(cons 1 (list 2 3 4))
-
-
 (define (deep-reverse items)  
   (define result (reverse items))
   (cond ((null? result) '())
@@ -68,4 +67,9 @@
 	 (cons (reverse (car result)) (deep-reverse (cdr result))))
 	((not (pair? (car result)))
 	 (cons (car result)) (deep-reverse (cdr result)))))
+
+
+
+
+
 

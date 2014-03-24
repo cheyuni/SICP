@@ -2,13 +2,5 @@
 
 (define y (list 4 5 6))
 
-(append x y)
-
-(cons x y)
-
-(list x y)
-
-(define (reverse items)
-  (append (cdr items) (car items)))
 
 
